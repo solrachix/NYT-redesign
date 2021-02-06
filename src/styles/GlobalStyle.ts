@@ -1,0 +1,49 @@
+import { createGlobalStyle } from 'styled-components'
+//  import { lighten } from 'polished';
+
+export default createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body, #root {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    background: ${({ theme }) => theme.colors.themeColors.background};
+    -webkit-font-smoothing: antialiased;
+    color: ${({ theme }) => theme.colors.themeColors.text};
+    font-family: 'Montserrat', 'Roboto',sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: ${({ theme }) => theme.colors.themeColors.text};
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+  }
+
+  input, button, select {
+    outline: none;
+    font-family: 'Montserrat', 'Roboto',Arial, Helvetica, sans-serif;
+  }
+  input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+  }
+  input::-webkit-search-decoration,
+  input::-webkit-search-cancel-button {
+    display: none; 
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: ${({ theme }) => theme.colors.themeColors.secondary};
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.themeColors.primary};
+    border-radius: 50px;
+  }
+`
